@@ -1,19 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import FavoritePage from './pages/FavoritesPage';
+import FavoritesPage from './pages/FavoritesPage';
 import MoviePage from './pages/MoviePage';
 import NotFoundPage from './pages/NotFoundPage';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <div>
-      <Routes>
+    <Routes>
+      <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/favorites" element={<FavoritePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
   );
 }
 
