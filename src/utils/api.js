@@ -14,7 +14,7 @@ async function getData(options){
 
     url.searchParams.set('apikey', API_KEY_OMDB);
     for (const [key, value] of Object.entries(options)) {
-        if (value !== undefined)
+        if (value != null)
             url.searchParams.set(key, value);
     }
 

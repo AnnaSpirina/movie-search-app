@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function SearchBar(){
-    const [inputValue, setInputValue] = useState("");
+    const [searchParams] = useSearchParams();
+    const qValue = searchParams.get('q');
+    const [inputValue, setInputValue] = useState(qValue ? qValue : "");
     const navigate = useNavigate();
 
     const handleChangeInput = (event) => {
