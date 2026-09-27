@@ -2,6 +2,12 @@
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
+    transition: var(--transition-slow);
+}
+
+.movieCard:hover{
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
 }
 
 .movieCard a{
@@ -28,7 +34,7 @@
     border-top-left-radius: var(--radius-sm);
     border-top-right-radius: var(--radius-sm);
     width: 100%;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     display: block;
 }
