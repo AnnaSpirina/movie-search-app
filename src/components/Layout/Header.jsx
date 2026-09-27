@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "../SearchBar";
 
 function Header(){
     return (
@@ -6,6 +7,7 @@ function Header(){
             <Link to="/">
                 <img src="/logo_dark.png" alt="КиноГид" className="logo" />
             </Link>
+            <SearchBar />
             <nav className="header-links">
                 <NavLink to="/">
                     Главная
