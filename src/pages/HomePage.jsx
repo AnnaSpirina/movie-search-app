@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from "../utils/api";
+import MovieList from '../components/Movie/MovieList';
 
 function HomePage() {
     const [movies, setMovies] = useState([]);
@@ -33,13 +34,7 @@ function HomePage() {
     return (
         <div>
             <h1>Результаты поиска</h1>
-            <ul>
-                {movies.map(movie => (
-                    <li key={movie.imdbID}>
-                        {movie.Title} - {movie.Year}
-                    </li>
-                ))}
-            </ul>
+            <MovieList movies={movies}/>
         </div>
     );
 }
