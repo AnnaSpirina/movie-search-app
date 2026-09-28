@@ -11,7 +11,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/movie/:imdbID" element={<MoviePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
