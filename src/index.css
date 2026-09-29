@@ -55,7 +55,7 @@
 
   /* Borders */
   --border-color: #E9E5F0;
-  --border-hover: #D8CBEA;
+  --border-hover: #8f57dc;
 
   /* Text */
   --text-primary: #17152A;
@@ -121,6 +121,25 @@ footer{
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
   justify-content: end;
+}
+
+.button{
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.button:hover{
+  border-color: var(--border-hover);
+}
+
+.button-transparent{
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .logo{
