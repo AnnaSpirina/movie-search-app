@@ -5,7 +5,7 @@ import styles from './MoviePage.module.css';
 import PosterMovie from "../components/PosterMovie";
 import { formatRuntime } from "../utils/formatRuntime";
 import { translateType } from "../utils/translations";
-import { formatGenres } from "../utils/formatGenres";
+import { formatList } from "../utils/formatList";
 
 function MoviePage() {
     const { imdbID } = useParams();
@@ -33,7 +33,14 @@ function MoviePage() {
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>{error}</div>;
 
-    const genres = formatGenres(movie.Genre);
+    const genres = formatList(movie.Genre);
+    const actors = formatList(movie.Actors);
+    const movieDetails = [
+        { label: 'Режиссёр', value: movie.Director },
+        { label: 'Сценарий', value: movie.Writer },
+        { label: 'Сборы', value: movie.BoxOffice },
+        { label: 'Награды', value: movie.Awards },
+    ].filter(({ value }) => value && value !== 'N/A');
     return (
         <div className={styles.movieContainer}>
             <div className={styles.movieInformation}>
@@ -60,6 +67,31 @@ function MoviePage() {
                     )}
                 </div>
             </div>
+            {actors.length > 0 && (
+                <div className={styles.movieActorsContainer}>
+                    <h2 className={styles.movieActorsTitle}>Актеры</h2>
+                    <div className={styles.movieActors}>
+                        {actors.map((actor) => (
+                            <div key={actor} className={styles.movieActor}>
+                                <img src="/images/actor.svg" alt=""/>
+                                {actor}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+            {(movieDetails.length > 0) &&
+                <table className={styles.movieCharacteristic}>
+                    <tbody>
+                        {movieDetails.map((details) => (
+                            <tr key={`${details.label}-${details.value}`}>
+                                <td>{details.label}</td>
+                                <td>{details.value}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            }
         </div>
     )
 }

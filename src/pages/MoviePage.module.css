@@ -72,3 +72,37 @@
     font-size: 14px;
     line-height: 14px;
 }
+
+.movieActorsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.movieActors{
+    display: flex;
+    gap: 30px;
+}
+
+.movieActorsTitle{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.movieActor{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 16px;
+    width: 60px;
+    text-align: center;
+}
+
+.movieCharacteristic td {
+    padding: 10px 0px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
