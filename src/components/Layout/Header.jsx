@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar";
+import { useFavorites } from "../../hooks/useFavorites";
 
 function Header(){
+    const { favorites } = useFavorites();
+
     return (
         <header>
             <Link to="/">
@@ -13,7 +16,7 @@ function Header(){
                     Главная
                 </NavLink>
                 <NavLink to="/favorites">
-                    Избранное
+                    Избранное <span>{favorites.length}</span>
                 </NavLink>
             </nav>
         </header>
