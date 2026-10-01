@@ -6,12 +6,15 @@ import PosterMovie from "../components/PosterMovie";
 import { formatRuntime } from "../utils/formatRuntime";
 import { translateType } from "../utils/translations";
 import { formatList } from "../utils/formatList";
+import { useFavorites } from "../hooks/useFavorites";
 
 function MoviePage() {
     const { imdbID } = useParams();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [movie, setMovie] = useState(null);
+    const {addFavorite, removeFavorite, isFavorite} = useFavorites();
+    const isFavoriteMovie = isFavorite(imdbID);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -48,6 +51,7 @@ function MoviePage() {
 
         const genres = formatList(movie.Genre);
         const actors = formatList(movie.Actors);
+
         const movieDetails = [
             { label: 'Режиссёр', value: movie.Director },
             { label: 'Сценарий', value: movie.Writer },
@@ -107,11 +111,29 @@ function MoviePage() {
                 }
             </>
         );
+    } 
+
+    const handleFavoriteClick = () => {
+        if (isFavoriteMovie){
+            removeFavorite(movie.imdbID);
+        }
+        else{
+            addFavorite({
+                imdbID: movie.imdbID,
+                Title: movie.Title,
+                Year: movie.Year,
+                Poster: movie.Poster,
+                Type: movie.Type
+            });
+        }
     }
 
     return (
         <div className={styles.movieContainer}>
-            <button className="button button-transparent" type="button" onClick={handleBack}>‹ Назад</button>
+            <div className={styles.movieActions}>
+                <button className="button button-transparent" type="button" onClick={handleBack}>‹ Назад</button>
+                {(!loading && !error) && <button className="button button-purple" aria-pressed={isFavoriteMovie} type="button" onClick={handleFavoriteClick}>♡ {isFavoriteMovie ? "Убрать из избранного" : "Добавить в избранное"}</button>}
+            </div>
             {movieContent()}
         </div>
     )

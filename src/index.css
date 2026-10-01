@@ -11,7 +11,7 @@
 
   /* Brand */
   --primary: #9B4DFF;
-  --primary-hover: #AD68FF;
+  --primary-hover: #c49df4;
   --secondary: #E84BCB;
   --secondary-hover: #D93AA5;
 
@@ -132,14 +132,24 @@ footer{
   line-height: 20px;
 }
 
-.button:hover{
-  border-color: var(--border-hover);
-}
-
 .button-transparent{
   background: transparent;
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
+}
+
+.button-transparent:hover{
+  border-color: var(--border-hover);
+}
+
+.button-purple{
+  background: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--primary);
+}
+
+.button-purple:hover{
+  border-color: var(--primary-hover);
 }
 
 .logo{
