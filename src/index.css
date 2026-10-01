@@ -48,14 +48,14 @@
 
 [data-theme="light"] {
   /* Background */
-  --bg-primary: #F7F5FB;
-  --bg-secondary: #FFFFFF;
+  --bg-primary: #f7f3ff;
+  --bg-secondary: #fcf0ff;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #FCFAFF;
+  --bg-card-hover: #f9f5ff;
 
   /* Borders */
-  --border-color: #E9E5F0;
-  --border-hover: #8f57dc;
+  --border-color: #d6d2dc;
+  --border-hover: #dbc1ff;
 
   /* Text */
   --text-primary: #17152A;
