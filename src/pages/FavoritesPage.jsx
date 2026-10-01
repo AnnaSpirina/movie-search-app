@@ -3,10 +3,24 @@ import { useFavorites } from "../hooks/useFavorites";
 import { Link } from "react-router-dom";
 
 function FavoritesPage() {
-  const { favorites } = useFavorites();
+  const { favorites, clearFavorites } = useFavorites();
+
+  const handleClearClick = () => {
+    const isConfirmed = window.confirm(
+      "Вы уверены, что хотите удалить все фильмы из избранного? Это действие нельзя отменить."
+    );
+
+    if (isConfirmed) {
+      clearFavorites();
+    }
+  }
+
   return (
     <div>
-      <h1>Избранное</h1>
+      <div className="header-page">
+        <h1>Избранное</h1>
+        {(favorites.length > 0) && <button className="button button-transparent" onClick={handleClearClick}>Убрать все из избранного</button>}
+      </div>
       {
         favorites.length > 0 ?
           <MovieList movies={favorites}/> 

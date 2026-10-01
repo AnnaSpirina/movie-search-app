@@ -123,10 +123,13 @@ footer{
   justify-content: end;
 }
 
+button{
+  cursor: pointer;
+}
+
 .button{
   border-radius: var(--radius-sm);
   padding: 10px 20px;
-  cursor: pointer;
   width: fit-content;
   font-size: 16px;
   line-height: 20px;
@@ -150,6 +153,14 @@ footer{
 
 .button-purple:hover{
   border-color: var(--primary-hover);
+}
+
+.header-page{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .logo{

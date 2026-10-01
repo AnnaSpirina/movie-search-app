@@ -3,6 +3,7 @@
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
     transition: var(--transition-slow);
+    position: relative;
 }
 
 .movieCard:hover{
