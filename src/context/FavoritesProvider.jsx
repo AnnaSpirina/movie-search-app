@@ -3,7 +3,7 @@ import { FavoritesContext } from "./FavoritesContext";
 import { favoritesReducer, ACTIONS } from "./favoritesReducer";
 import { FAVORITES_STORAGE_KEY } from "../utils/constants";
 
-export function loadFavorites(){
+function loadFavorites(){
     try{
         const saved = localStorage.getItem(FAVORITES_STORAGE_KEY);
         if (!saved) return [];
