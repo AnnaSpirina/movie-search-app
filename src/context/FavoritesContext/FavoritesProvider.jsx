@@ -1,7 +1,7 @@
 import { useReducer, useEffect } from "react";
 import { FavoritesContext } from "./FavoritesContext";
 import { favoritesReducer, ACTIONS } from "./favoritesReducer";
-import { FAVORITES_STORAGE_KEY } from "../utils/constants";
+import { FAVORITES_STORAGE_KEY } from "../../utils/constants";
 
 function loadFavorites(){
     try{
