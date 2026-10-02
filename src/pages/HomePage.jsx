@@ -9,10 +9,11 @@ function HomePage() {
     const [searchParams] = useSearchParams();
     const qValue = searchParams.get('q');
     const typeValue = searchParams.get('type');
+    const yearValue = searchParams.get('y');
 
     const fetchMovies = useCallback(
-        () => searchMovies({text: qValue, type: typeValue}),
-        [qValue, typeValue]
+        () => searchMovies({text: qValue, type: typeValue, year: yearValue}),
+        [qValue, typeValue, yearValue]
     )
 
     const { data, loading, error } = useFetch(qValue ? fetchMovies : null);
