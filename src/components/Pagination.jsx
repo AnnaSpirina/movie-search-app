@@ -10,6 +10,7 @@ function Pagination({total}){
         const params = new URLSearchParams(searchParams);
         params.set('page', newPage);
         setSearchParams(params);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     return(
