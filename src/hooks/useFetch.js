@@ -6,6 +6,7 @@ export function useFetch(fetchFn){
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!fetchFn) return;
         const load = async () => {
             setLoading(true);
             setError(null);
