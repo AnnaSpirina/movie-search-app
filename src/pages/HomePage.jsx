@@ -3,14 +3,16 @@ import { useSearchParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 import { searchMovies } from '../utils/api';
 import MovieList from '../components/Movie/MovieList';
+import MovieFilters from '../components/Movie/MovieFilters';
 
 function HomePage() {
     const [searchParams] = useSearchParams();
     const qValue = searchParams.get('q');
+    const typeValue = searchParams.get('type');
 
     const fetchMovies = useCallback(
-        () => searchMovies({text: qValue}),
-        [qValue]
+        () => searchMovies({text: qValue, type: typeValue}),
+        [qValue, typeValue]
     )
 
     const { data, loading, error } = useFetch(qValue ? fetchMovies : null);
@@ -29,6 +31,7 @@ function HomePage() {
     return (
         <div>
             <h1>Результаты поиска</h1>
+            <MovieFilters />
             {(!loading && !error) && <div>Найдено: <span>{total}</span></div>}
             {searchContent()}
         </div>
