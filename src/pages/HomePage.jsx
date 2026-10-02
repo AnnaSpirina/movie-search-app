@@ -4,16 +4,19 @@ import { useFetch } from '../hooks/useFetch';
 import { searchMovies } from '../utils/api';
 import MovieList from '../components/Movie/MovieList';
 import MovieFilters from '../components/Movie/MovieFilters';
+import { PAGE_SIZE } from '../utils/constants';
+import Pagination from '../components/Pagination';
 
 function HomePage() {
     const [searchParams] = useSearchParams();
     const qValue = searchParams.get('q');
     const typeValue = searchParams.get('type');
     const yearValue = searchParams.get('y');
+    const pageValue = searchParams.get('page');
 
     const fetchMovies = useCallback(
-        () => searchMovies({text: qValue, type: typeValue, year: yearValue}),
-        [qValue, typeValue, yearValue]
+        () => searchMovies({text: qValue, type: typeValue, year: yearValue, page: pageValue}),
+        [qValue, typeValue, yearValue, pageValue]
     )
 
     const { data, loading, error } = useFetch(qValue ? fetchMovies : null);
@@ -35,6 +38,7 @@ function HomePage() {
             <MovieFilters />
             {(!loading && !error) && <div>Найдено: <span>{total}</span></div>}
             {searchContent()}
+            {(!loading && !error && total > PAGE_SIZE) && <Pagination total={total}/>}
         </div>
     );
 }

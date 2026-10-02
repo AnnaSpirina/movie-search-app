@@ -7,3 +7,5 @@ export const NO_IMAGE_URL = '/images/no-poster.svg';
 export const FAVORITES_STORAGE_KEY = 'movies-favorites';
 // Ключ для темы в localStorage
 export const THEME_STORAGE_KEY = 'movies-theme';
+// Количество фильмов на странице
+export const PAGE_SIZE = 10;
