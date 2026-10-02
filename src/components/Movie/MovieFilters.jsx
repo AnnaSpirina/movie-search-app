@@ -17,6 +17,7 @@ function MovieFilters(){
         const params = new URLSearchParams(searchParams);
         const value = event.target.value;
 
+        params.delete("page");
         if (value){
             params.set(filterName, value);
         } else{
