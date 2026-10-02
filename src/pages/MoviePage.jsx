@@ -1,5 +1,6 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback } from "react";
+import { useFetch } from "../hooks/useFetch";
 import { getMovieDetails } from "../utils/api";
 import styles from './MoviePage.module.css';
 import PosterMovie from "../components/PosterMovie";
@@ -10,28 +11,15 @@ import ButtonFavorite from "../components/ButtonFavorite";
 
 function MoviePage() {
     const { imdbID } = useParams();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [movie, setMovie] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            setError(null);
+    const fetchMovieDetails = useCallback(
+        () => getMovieDetails({imdbID, plot: "full"}),
+        [imdbID]
+    )
 
-            try{
-                const movieResult = await getMovieDetails({imdbID, plot: "full"});
-                setMovie(movieResult);
-            } catch (err){
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchData();
-    }, [imdbID]);
+    const { data: movie, loading, error } = useFetch(fetchMovieDetails);
 
     const handleBack = () => {
         if (location.key === 'default') {
