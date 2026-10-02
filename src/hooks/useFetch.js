@@ -7,19 +7,25 @@ export function useFetch(fetchFn){
 
     useEffect(() => {
         if (!fetchFn) return;
+
+        let ignore = false;
         const load = async () => {
             setLoading(true);
             setError(null);
             try{
                 const result = await fetchFn();
-                setData(result);
+                if (!ignore) setData(result);
             } catch (err){
-                setError(err.message);
+                if (!ignore) setError(err.message);
             } finally{
-                setLoading(false);
+                if (!ignore) setLoading(false);
             }
         }
         load();
+
+        return () => {
+            ignore = true;
+        }
     }, [fetchFn]);
 
     return { data, loading, error };
