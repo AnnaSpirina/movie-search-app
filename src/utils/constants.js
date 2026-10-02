@@ -5,3 +5,5 @@ export const BASE_URL_OMDB = 'https://www.omdbapi.com/';
 export const NO_IMAGE_URL = '/images/no-poster.svg';
 // Ключ для избранного в localStorage
 export const FAVORITES_STORAGE_KEY = 'movies-favorites';
+// Ключ для темы в localStorage
+export const THEME_STORAGE_KEY = 'movies-theme';
