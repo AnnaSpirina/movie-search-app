@@ -28,7 +28,7 @@ function HomePage() {
     const total = data?.totalResults ?? 0;
 
     const searchContent = () => {
-        if (loading) return <div>Загрузка...</div>;
+        if (loading) return <MovieList loading={true} />;
         if (error) return <div>{error}</div>;
         return <MovieList movies={movies} />
     }

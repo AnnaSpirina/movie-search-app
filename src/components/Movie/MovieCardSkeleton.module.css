@@ -1,0 +1,35 @@
+.card{
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+.block {
+    background-color: var(--bg-card-hover);
+    border-radius: var(--radius-sm);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.poster {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+    width: 100%;
+    aspect-ratio: 4 / 5;
+}
+
+.title{
+    width: 50%;
+    height: 16px;
+    margin: 20px 20px 10px 20px;
+}
+
+.type{
+    height: 14px;
+    width: 25%;
+    margin: 0px 20px 20px 20px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
