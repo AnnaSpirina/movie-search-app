@@ -6,6 +6,7 @@ import MovieList from '../components/Movie/MovieList';
 import MovieFilters from '../components/Movie/MovieFilters';
 import { PAGE_SIZE } from '../utils/constants';
 import Pagination from '../components/UI/Pagination';
+import styles from './HomePage.module.css';
 
 function HomePage() {
     const [searchParams] = useSearchParams();
@@ -34,9 +35,11 @@ function HomePage() {
     
     return (
         <div>
-            <h1>Результаты поиска</h1>
             <MovieFilters />
-            {(!loading && !error) && <div>Найдено: <span>{total}</span></div>}
+            <div className='header-page'>
+                <h1>Результаты поиска</h1>
+                {(!loading && !error) && <div className={styles.findDiv}>Найдено: <span className={styles.totalFind}>{total}</span></div>}
+            </div>
             {searchContent()}
             {(!loading && !error && total > PAGE_SIZE) && <Pagination total={total}/>}
         </div>

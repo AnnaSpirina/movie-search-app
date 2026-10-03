@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import styles from "./MovieFilters.module.css";
 
 const startYear = 1890;
 const currentYear = new Date().getFullYear();
@@ -28,15 +29,15 @@ function MovieFilters(){
     }
 
     return(
-        <div>
-            <select value={type} name="type" onChange={handleChange} aria-label="Тип фильма">
+        <div className={styles.movieFilters}>
+            <select className={styles.select} value={type} name="type" onChange={handleChange} aria-label="Тип фильма">
                 <option value="">Все типы</option>
                 <option value="movie">Фильмы</option>
                 <option value="series">Сериалы</option>
                 <option value="episode">Эпизоды</option>
             </select>
-            <select value={year} name="y" onChange={handleChange} aria-label="Год выхода">
-                <option value="">Год не выбран</option>
+            <select className={styles.select} value={year} name="y" onChange={handleChange} aria-label="Год выхода">
+                <option value="">Все годы</option>
                 {years.map(y => (
                     <option key={y} value={y}>{y}</option>
                 ))}

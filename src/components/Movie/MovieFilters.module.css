@@ -1,0 +1,27 @@
+.movieFilters{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.select {
+    appearance: none;
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px 40px 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+
+    background-image: url('/images/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+}
+
+.select:focus{
+    border-color: var(--border-hover);
+}
