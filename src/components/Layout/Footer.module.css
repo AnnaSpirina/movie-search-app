@@ -1,0 +1,15 @@
+.logo{
+    width: 110px;
+}
+
+.footerLinks{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footerLinks a, .copyright{
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
