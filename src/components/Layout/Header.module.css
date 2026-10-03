@@ -1,0 +1,41 @@
+.logo{
+    width: 180px;
+}
+
+.headerActions{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.headerLinks{
+    display: flex;
+    gap: 20px;
+}
+
+.headerLink {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.headerLink img{
+    width: 20px;
+}
+
+.countFavorites{
+    padding: 2px 5px;
+    background-color: var(--secondary);
+    color: #FFFFFF;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+
+.active {
+    color: var(--primary);
+}

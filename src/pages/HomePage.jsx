@@ -5,7 +5,7 @@ import { searchMovies } from '../utils/api';
 import MovieList from '../components/Movie/MovieList';
 import MovieFilters from '../components/Movie/MovieFilters';
 import { PAGE_SIZE } from '../utils/constants';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/UI/Pagination';
 
 function HomePage() {
     const [searchParams] = useSearchParams();

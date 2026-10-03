@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from './MovieCard.module.css';
-import PosterMovie from "../PosterMovie";
+import PosterMovie from "../UI/PosterMovie";
 import { translateType } from "../../utils/translations";
-import ButtonFavorite from "../ButtonFavorite";
+import ButtonFavorite from "../UI/ButtonFavorite";
 
 function MovieCard({movie}){
     return (

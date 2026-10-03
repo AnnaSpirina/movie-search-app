@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NO_IMAGE_URL } from "../utils/constants";
+import { NO_IMAGE_URL } from "../../utils/constants";
 
 function PosterMovie({className, src, loading="auto"}){
     const [hasImageError, setHasImageError] = useState(false);

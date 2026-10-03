@@ -112,7 +112,8 @@ header{
   display: flex;
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
-  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
 }
 
 footer{
@@ -161,30 +162,6 @@ button{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.logo{
-  width: 220px;
-}
-
-.header-links{
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-.header-links a{
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-.header-links a:hover {
-  color: var(--primary);
-}
-
-.header-links a.active {
-  color: var(--primary);
 }
 
 h1 {

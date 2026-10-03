@@ -1,4 +1,4 @@
-import { useFavorites } from "../hooks/useFavorites";
+import { useFavorites } from "../../hooks/useFavorites";
 import styles from './ButtonFavorite.module.css';
 
 function ButtonFavorite({movie, variant}){

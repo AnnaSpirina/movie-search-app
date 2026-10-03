@@ -3,11 +3,11 @@ import { useCallback } from "react";
 import { useFetch } from "../hooks/useFetch";
 import { getMovieDetails } from "../utils/api";
 import styles from './MoviePage.module.css';
-import PosterMovie from "../components/PosterMovie";
+import PosterMovie from "../components/UI/PosterMovie";
 import { formatRuntime } from "../utils/formatRuntime";
 import { translateType } from "../utils/translations";
 import { formatList } from "../utils/formatList";
-import ButtonFavorite from "../components/ButtonFavorite";
+import ButtonFavorite from "../components/UI/ButtonFavorite";
 
 function MoviePage() {
     const { imdbID } = useParams();

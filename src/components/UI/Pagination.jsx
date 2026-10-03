@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { PAGE_SIZE } from "../utils/constants";
+import { PAGE_SIZE } from "../../utils/constants";
 
 function Pagination({total}){
     const [searchParams, setSearchParams] = useSearchParams();
