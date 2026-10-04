@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
 import { PAGE_SIZE } from "../../utils/constants";
 
-function Pagination({total}){
+function Pagination({total, page: pageProp}){
     const [searchParams, setSearchParams] = useSearchParams();
-    const page = Number(searchParams.get("page") ?? 1);
+    const page = pageProp ?? Number(searchParams.get("page") ?? 1);
     const totalPages = Math.ceil(total / PAGE_SIZE);
 
     const goToPage = (newPage) => {
