@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 import SearchBar from "../UI/SearchBar";
 import { useFavorites } from "../../hooks/useFavorites";
 import { useTheme } from "../../hooks/useTheme";
@@ -8,6 +8,8 @@ import styles from './Header.module.css';
 function Header(){
     const { favorites } = useFavorites();
     const { theme } = useTheme();
+    const [searchParams] = useSearchParams();
+    const q = searchParams.get('q');
 
     const getClassNavLink = ({ isActive }) => {
         return isActive ? `${styles.headerLink} ${styles.active}` : styles.headerLink
@@ -18,7 +20,7 @@ function Header(){
             <Link to="/">
                 <img src={theme === "dark" ? "/logo_dark.png" : "/logo_light.png"} alt="КиноГид" className={styles.logo} />
             </Link>
-            <SearchBar />
+            <SearchBar key={q ?? ''}/>
             <div className={styles.headerActions}>
                 <nav className={styles.headerLinks}>
                     <NavLink
