@@ -5,13 +5,13 @@
 }
 
 .movieInformation{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    display: flex;
     gap: 20px;
 }
 
 .moviePoster{
     border-radius: var(--radius-sm);
+    width: 240px;
     aspect-ratio: 2 / 3;
     border: 1px solid var(--border-color);
     object-fit: cover;
