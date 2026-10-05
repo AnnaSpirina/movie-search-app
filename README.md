@@ -1,16 +1,50 @@
-# React + Vite
+# КиноГид
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение для поиска фильмов и сериалов на React с использованием [OMDb API](https://www.omdbapi.com/). Светлая и тёмная тема, избранное и адаптивная вёрстка под мобильные устройства.
 
-Currently, two official plugins are available:
+Демо: ссылка появится после деплоя.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+- Поиск фильмов, сериалов и эпизодов по названию
+- Фильтрация по типу и году выхода
+- Пагинация результатов
+- Страница фильма: постер, описание, рейтинг IMDb, жанры, актёры, режиссёр, награды
+- Добавление в избранное и удаление из него, очистка всего списка
+- Сохранение избранного и выбранной темы в `localStorage`
+- Переключение светлой и тёмной темы
+- Скелетоны во время загрузки
+- Страница 404
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Стек
 
-## Expanding the ESLint configuration
+- React 19 (функциональные компоненты, хуки `useState`, `useEffect`, `useReducer`, `useContext`, `useCallback`, кастомные хуки, композиция через `children`)
+- React Router 7 (вложенные маршруты с `Outlet`, динамический маршрут `/movie/:imdbID`, хранение поиска, фильтров и страницы в параметрах URL)
+- Context API + `useReducer` (избранное), Context API (тема)
+- Кастомный хук `useFetch` с обработкой загрузки и ошибок и защитой от гонки запросов
+- CSS Modules, CSS-переменные для тем, media queries
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Запуск проекта локально
+
+1. Получите бесплатный API-ключ на [omdbapi.com](https://www.omdbapi.com/apikey.aspx).
+2. Создайте в корне проекта файл `.env`:
+
+```
+VITE_OMDB_API_KEY=ваш_ключ
+```
+
+3. Установите зависимости и запустите проект:
+
+```
+npm install
+npm run dev
+```
+
+Приложение откроется на [http://localhost:5173](http://localhost:5173).
+
+## Сборка
+
+```
+npm run build
+```
