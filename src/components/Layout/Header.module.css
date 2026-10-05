@@ -39,3 +39,73 @@
 .active {
     color: var(--primary);
 }
+
+@media (max-width: 768px){
+    .logo{
+        width: 120px;
+    }
+    
+    .headerActions{
+        gap: 15px;
+    }
+
+    .headerLinks{
+        gap: 15px;
+    }
+
+    .headerLink {
+        font-size: 16px;
+    }
+
+    .headerLink img{
+        display: none;
+    }
+
+    .countFavorites{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 490px){
+    .logo{
+        width: 95px;
+    }
+    
+    .headerActions{
+        gap: 10px;
+    }
+
+    .headerLink {
+        font-size: 14px;
+    }
+
+    .headerLinks{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 420px){
+    .logo{
+        width: 80px;
+    }
+    
+    .headerActions{
+        gap: 7px;
+    }
+
+    .headerLink {
+        font-size: 12px;
+    }
+
+    .headerLinks{
+        gap: 7px;
+    }
+
+    .headerLink{
+        gap: 3px;
+    }
+
+    .countFavorites{
+        font-size: 10px;
+    }
+}

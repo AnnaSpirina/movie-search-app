@@ -48,10 +48,10 @@
 
 [data-theme="light"] {
   /* Background */
-  --bg-primary: #f7f3ff;
+  --bg-primary: #f7f0f7;
   --bg-secondary: #fcf0ff;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #f9f5ff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #edc6ff;
 
   /* Borders */
   --border-color: #d6d2dc;
@@ -168,4 +168,30 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   margin: 0;
+}
+
+@media (max-width: 1140px){
+  header{
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    row-gap: 10px;
+    gap: 20px;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  footer{
+    flex-wrap: wrap;
+    row-gap: 20px;
+    padding: var(--spacing-md) var(--spacing-sm);
+    gap: 15px;
+  }
+
+  main{
+    margin: var(--spacing-md) var(--spacing-sm);
+  }
 }

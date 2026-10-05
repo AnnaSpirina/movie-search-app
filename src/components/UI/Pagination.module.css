@@ -9,13 +9,15 @@
     font-size: 16px;
     line-height: 20px;
     background-color: var(--bg-card);
-    padding: 15px;
     border: none;
     border-radius: var(--radius-sm);
     color: var(--text-primary);
     height: 50px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonPagination:hover:not(:disabled){
@@ -34,4 +36,52 @@
 
 .numberPagination{
     width: 50px;
+}
+
+@media (max-width: 768px){
+    .pagination{
+        gap: 7px;
+    }
+
+    .buttonPagination{
+        font-size: 14px;
+        line-height: 14px;
+        height: 34px;
+    }
+
+    .numberPagination{
+        width: 34px;
+    }
+}
+
+@media (max-width: 520px){
+    .pagination{
+        gap: 5px;
+    }
+
+    .buttonPagination{
+        font-size: 12px;
+        line-height: 12px;
+        height: 26px;
+    }
+
+    .numberPagination{
+        width: 26px;
+    }
+}
+
+@media (max-width: 380px){
+    .pagination{
+        gap: 3px;
+    }
+
+    .buttonPagination{
+        font-size: 10px;
+        line-height: 10px;
+        height: 20px;
+    }
+
+    .numberPagination{
+        width: 20px;
+    }
 }

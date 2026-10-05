@@ -14,8 +14,8 @@
     width: 240px;
     aspect-ratio: 2 / 3;
     border: 1px solid var(--border-color);
-    object-fit: cover;
     display: block;
+    height: max-content;
 }
 
 .movieDescription{
@@ -110,4 +110,14 @@
 .movieActions{
     display: flex;
     gap: 10px;
+}
+
+@media(max-width:768px){
+    .moviePoster{
+        display: none;
+    }
+
+    .movieCharacteristic td:nth-child(2) {
+        padding: 10px 0px 10px 20px;
+    }
 }

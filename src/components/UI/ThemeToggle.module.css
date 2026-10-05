@@ -18,3 +18,19 @@
 .optionThemeToggle.active{
     background-color: var(--primary);
 }
+
+@media (max-width: 768px){
+    .optionThemeToggle{
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 420px){
+    .optionThemeToggle{
+        padding: 5px 7px;
+
+        img{
+            width: 15px;
+        }
+    }
+}

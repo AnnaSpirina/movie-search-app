@@ -32,7 +32,7 @@ function SearchBar(){
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.search}>
             <div className={styles.searchWrapperWithIcon}>
                 <img alt="" className={styles.searchIcon} src={`/images/loupe-${(theme === "dark") ? "white" : "gray"}.svg`}/>
                 <input
