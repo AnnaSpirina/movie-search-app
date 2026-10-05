@@ -8,6 +8,7 @@ import { formatRuntime } from "../utils/formatRuntime";
 import { translateType } from "../utils/translations";
 import { formatList } from "../utils/formatList";
 import ButtonFavorite from "../components/UI/ButtonFavorite";
+import MovieDetailsSkeleton from "../components/Movie/MovieDetailsSkeleton";
 
 function MoviePage() {
     const { imdbID } = useParams();
@@ -31,7 +32,7 @@ function MoviePage() {
 
     const movieContent = () => {
         if (loading)
-            return <div>Загрузка...</div>;
+            return <MovieDetailsSkeleton />;
         if (error)
             return <div>{error}</div>;
 
