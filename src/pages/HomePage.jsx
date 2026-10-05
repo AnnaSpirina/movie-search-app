@@ -7,6 +7,7 @@ import MovieFilters from '../components/Movie/MovieFilters';
 import { PAGE_SIZE } from '../utils/constants';
 import Pagination from '../components/UI/Pagination';
 import styles from './HomePage.module.css';
+import HomeGuide from '../components/Home/HomeGuide';
 
 function HomePage() {
     const [searchParams] = useSearchParams();
@@ -22,7 +23,7 @@ function HomePage() {
 
     const { data, loading, error } = useFetch(qValue ? fetchMovies : null);
 
-    if (!qValue) return <div>Введите название фильма в поиске</div>;
+    if (!qValue) return <HomeGuide />;
 
     const movies = data?.movies ?? [];
     const total = data?.totalResults ?? 0;
